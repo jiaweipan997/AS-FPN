@@ -138,13 +138,8 @@ class Asymmetric_Stacked_Fusion(nn.Module):
         self.no_norm_on_lateral = no_norm_on_lateral
         self.stack = stack
 
-        # if end_level == -1:
         self.backbone_end_level = self.num_ins
         assert num_outs >= self.num_ins - start_level
-        # else:
-        #     self.backbone_end_level = end_level
-        #     assert end_level <= len(in_channels)
-        #     assert num_outs == end_level - start_level
         self.start_level = start_level
         self.end_level = end_level
 
