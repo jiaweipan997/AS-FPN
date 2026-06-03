@@ -210,7 +210,7 @@ class ASFPN(nn.Module):
         
         # Global Residual Recursive Learning
         # Holistic Residual Connection
-        res_inputs = [F_in.clone() for F_in in F_in]
+        res_F_in = [F_in.clone() for F_in in F_in]
 
         # Asymmetric_Stacked_Fusion
         F_stack = self.Asymmetric_Stacked_Fusion(F_in)
@@ -222,7 +222,7 @@ class ASFPN(nn.Module):
         F_stack[-1] = F_stack[-1].view(B, H, W, C).permute([0, 3, 1, 2]).contiguous()
 
         # Backbone-Adaptive Feature Alignment
-        F_out = [self.activate(i + j) for i, j in zip(F_stack, res_inputs)]
+        F_out = [self.activate(i + j) for i, j in zip(F_stack, res_F_in)]
 
         return tuple(F_out)
 
