@@ -1,6 +1,11 @@
 # AS-FPN
 This repo is the official implementation of "AS-FPN: An Asymmetric Semantic-Preserving Feature Pyramid Network for Efficient Semantic Segmentation". This repo contains the supported code, configuration files, and datasets to reproduce the semantic segmentation results of AS-FPN. The code is mainly based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on NVIDIA GTX 3090Ti GPUs in CUDA 12.1, Python 3.11, and PyTorch 2.4.1.
 
+## Code Snippet
+The code snippet is [here](mmseg/models/necks/asfpn.py).
+
+## Citation
+If you find our repo useful for your research, please consider citing our paper:
 
 ## Installation
 Step 1. Create a conda environment and activate it.
