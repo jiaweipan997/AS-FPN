@@ -10,8 +10,8 @@ If you find our repo useful for your research, please consider citing our paper.
 ## Installation
 Step 1. Create a conda environment and activate it.
 ```
-conda create --name ASFPN python=3.11 -y
-conda activate ASFPN
+conda create --name AS-FPN python=3.11 -y
+conda activate AS-FPN
 ```
 Step 2. Install PyTorch following [official instructions](https://pytorch.org/get-started/previous-versions/), e.g.
 ```
@@ -26,7 +26,7 @@ mim install "mmcv>=2.0.0"
 Step 4. Install BiDNet.
 ```
 git clone -b main https://github.com/jiaweipan997/AS-FPN.git
-cd ASFPN
+cd AS-FPN
 pip install -v -e .
 pip install ftfy
 pip install regex
