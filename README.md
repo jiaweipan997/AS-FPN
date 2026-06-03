@@ -1,5 +1,5 @@
 # AS-FPN
-This repo is the official implementation of "AS-FPN: An Asymmetric Semantic-Preserving Feature Pyramid Network for Efficient Semantic Segmentation". This repo contains the supported code, configuration files, and datasets to reproduce the semantic segmentation results of BiDNet. The code is mainly based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on NVIDIA GTX 3090Ti GPUs in CUDA 12.1, Python 3.11, and PyTorch 2.4.1.
+This repo is the official implementation of "AS-FPN: An Asymmetric Semantic-Preserving Feature Pyramid Network for Efficient Semantic Segmentation". This repo contains the supported code, configuration files, and datasets to reproduce the semantic segmentation results of AS-FPN. The code is mainly based on [MMSegmentaion V1.2.2.](https://github.com/open-mmlab/mmsegmentation/tree/main) All experiments were performed on NVIDIA GTX 3090Ti GPUs in CUDA 12.1, Python 3.11, and PyTorch 2.4.1.
 
 
 ## Installation
