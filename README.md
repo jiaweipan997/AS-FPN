@@ -69,7 +69,7 @@ AS-FPN
      .
      .
 ```
-Cityscapes
+### Cityscapes
 The data could be found [here](https://www.cityscapes-dataset.com/downloads/) after registration.
 
 By convention, **labelTrainIds.png are used for cityscapes training. We provided a script based on cityscapesscriptsto generate **labelTrainIds.png.
@@ -77,10 +77,10 @@ By convention, **labelTrainIds.png are used for cityscapes training. We provided
 # --nproc means 8 process for conversion, which could be omitted as well.
 python tools/dataset_converters/cityscapes.py data/cityscapes --nproc 8
 ```
-ADE20K
+### ADE20K
 The training and validation set of ADE20K could be download from this [link](http://data.csail.mit.edu/places/ADEchallenge/ADEChallengeData2016.zip). We may also download test set from [here](http://data.csail.mit.edu/places/ADEchallenge/release_test.zip).
 
-COCO Stuff 164k
+### COCO Stuff 164k
 For COCO Stuff 164k dataset, please run the following commands to download and convert the augmented dataset.
 ```
 # download
