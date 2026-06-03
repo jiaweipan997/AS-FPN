@@ -35,6 +35,71 @@ pip install mmpretrain>=1.0.0rc7
 
 ## Dataset prepare
 Dataset preparation：https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/user_guides/2_dataset_prepare.md#prepare-datasets
+e.g.
+Please create a new data folder and put the downloaded dataset in it and unzip it. The structure is as follows：
+```
+AS-FPN
+├── mmseg
+├── tools
+├── configs
+├── data
+│   ├── cityscapes
+│   │   ├── leftImg8bit
+│   │   │   ├── train
+│   │   │   ├── val
+│   │   ├── gtFine
+│   │   │   ├── train
+│   │   │   ├── val
+│   ├── ade
+│   │   ├── ADEChallengeData2016
+│   │   │   ├── annotations
+│   │   │   │   ├── training
+│   │   │   │   ├── validation
+│   │   │   ├── images
+│   │   │   │   ├── training
+│   │   │   │   ├── validation
+│   ├── coco_stuff164k
+│   │   ├── images
+│   │   │   ├── train2017
+│   │   │   ├── val2017
+│   │   ├── annotations
+│   │   │   ├── train2017
+│   │   │   ├── val2017
+     .
+     .
+     .
+```
+# Cityscapes
+The data could be found [here](https://www.cityscapes-dataset.com/downloads/) after registration.
+
+By convention, **labelTrainIds.png are used for cityscapes training. We provided a script based on cityscapesscriptsto generate **labelTrainIds.png.
+```
+# --nproc means 8 process for conversion, which could be omitted as well.
+python tools/dataset_converters/cityscapes.py data/cityscapes --nproc 8
+```
+# ADE20K
+The training and validation set of ADE20K could be download from this [link](http://data.csail.mit.edu/places/ADEchallenge/ADEChallengeData2016.zip). We may also download test set from [here](http://data.csail.mit.edu/places/ADEchallenge/release_test.zip).
+
+# COCO Stuff 164k
+For COCO Stuff 164k dataset, please run the following commands to download and convert the augmented dataset.
+```
+# download
+mkdir coco_stuff164k && cd coco_stuff164k
+wget http://images.cocodataset.org/zips/train2017.zip
+wget http://images.cocodataset.org/zips/val2017.zip
+wget http://calvin.inf.ed.ac.uk/wp-content/uploads/data/cocostuffdataset/stuffthingmaps_trainval2017.zip
+
+# unzip
+unzip train2017.zip -d images/
+unzip val2017.zip -d images/
+unzip stuffthingmaps_trainval2017.zip -d annotations/
+
+# --nproc means 8 process for conversion, which could be omitted as well.
+python tools/dataset_converters/coco_stuff164k.py /path/to/coco_stuff164k --nproc 8
+```
+By convention, mask labels in /path/to/coco_stuff164k/annotations/*2017/*_labelTrainIds.png are used for COCO Stuff 164k training and testing.
+
+The details of this dataset could be found at [here](https://github.com/nightrome/cocostuff#downloads).
 
 ## Training
 ```
