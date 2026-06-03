@@ -216,10 +216,10 @@ class ASFPN(nn.Module):
         F_stack = self.Asymmetric_Stacked_Fusion(F_in)
 
         # Semantic Attention
-        B, C, H, W = F_stack[-1].shape # F_attn
+        B, C, H, W = F_stack[-1].shape 
         F_stack[-1] = F_stack[-1].view(B, C, H * W).permute([0, 2, 1]).contiguous()
         F_stack[-1] = self.attention(F_stack[-1])
-        F_stack[-1] = F_stack[-1].view(B, H, W, C).permute([0, 3, 1, 2]).contiguous()
+        F_stack[-1] = F_stack[-1].view(B, H, W, C).permute([0, 3, 1, 2]).contiguous() # F_attn
 
         # Backbone-Adaptive Feature Alignment
         F_out = [self.activate(i + j) for i, j in zip(F_stack, res_F_in)]
