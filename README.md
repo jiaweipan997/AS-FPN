@@ -5,7 +5,7 @@ This repo is the official implementation of "AS-FPN: An Asymmetric Semantic-Pres
 The code snippet is [here](mmseg/models/necks/asfpn.py).
 
 ## Citation
-If you find our repo useful for your research, please consider citing our paper:
+If you find our repo useful for your research, please consider citing our paper.
 
 ## Installation
 Step 1. Create a conda environment and activate it.
