@@ -11,7 +11,7 @@ model = dict(
     neck=dict(
         type='ASFPN',
         in_channels=[32,64, 160, 256],
-        act_cfg=dict(type='ReLU'),
+        act_cfg=dict(type='GELU'),
     ),
     decode_head=dict(num_classes=150))
 
