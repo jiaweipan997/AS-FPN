@@ -12,7 +12,7 @@ model = dict(
     neck=dict(
         type='ASFPN',
         in_channels=[32,64, 160, 256],
-        act_cfg=dict(type='ReLU'),
+        act_cfg=dict(type='GELU'),
     ),
     test_cfg=dict(mode='slide', crop_size=(1024, 1024), stride=(768, 768)))
 
